@@ -1,0 +1,51 @@
+{
+  "name": "gas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "npm run build && mocha --require intelli-espower-loader",
+    "build": "browserify dev/main.js -t babelify -p gasify -o src/main.js",
+    "upload": "gapps upload",
+    "watch": "watchify dev/main.js -t babelify -p gasify -o src/main.js"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "gas"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paper-moon-apllo/gas.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/paper-moon-apllo/gas/issues"
+  },
+  "homepage": "https://github.com/paper-moon-apllo/gas#readme",
+  "devDependencies": {
+    "app-script-mock": "^1.0.3",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "babelify": "^8.0.0",
+    "browserify": "^16.2.2",
+    "gas-local": "^1.3.1",
+    "gas-webpack-plugin": "^0.3.0",
+    "gasify": "^0.1.2",
+    "intelli-espower-loader": "^1.0.1",
+    "mocha": "^5.2.0",
+    "power-assert": "^1.6.0",
+    "sync-request": "^6.0.0",
+    "watchify": "^3.11.0",
+    "webpack": "^4.16.5"
+  },
+  "dependencies": {
+    "babel-preset-gas": "^1.0.0"
+  }
+}
